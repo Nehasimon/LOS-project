@@ -1,0 +1,373 @@
+{
+  "accrual_periodicity": "other",
+  "additional_limitations": "",
+  "citation": "",
+  "contact_email": "dataandreports@hcai.ca.gov",
+  "data_collection_tool": "Patient Data Reporting",
+  "data_license": "Terms of Use",
+  "de_identification_method": "https://chhsdata.github.io/dataplaybook/resource_library/#datade-id",
+  "description": "This dataset contains annual hospital inpatient summary data based upon the Patient’s County of Residence.  The summary data includes discharge disposition, expected payer, sex, Medicare Severity-Diagnosis Related Group (MS-DRG), Major Diagnostic Categories (MDC), race group, admission source, and type of care. ",
+  "geo_coverage": "County",
+  "geographic_granularity": "county",
+  "keywords": [
+    "MDC",
+    "MS-DRG",
+    "Medicare Severity-Diagnosis Related Group",
+    "PDD",
+    "department of health care access and information",
+    "diagnosis code",
+    "disposition",
+    "expected payer",
+    "external cause",
+    "frequencies",
+    "gender",
+    "hcai",
+    "hospital",
+    "inpatient",
+    "patient county",
+    "procedure code",
+    "race group",
+    "sex",
+    "source of admission",
+    "type of care"
+  ],
+  "limitations": "Limitations",
+  "name": "hospital-inpatient-characteristics-by-patient-county-of-residence",
+  "program_web_page": "https://www.hcai.ca.gov/",
+  "related_resources": "For facility-level data, see the “Hospital Inpatient Characteristics by Facility” dataset. ",
+  "resources": [
+    {
+      "description": "This word document provides details about discharge disposition and  a note about MS-DRGs.",
+      "format": "DOCX",
+      "name": "hospital-inpatient-notes",
+      "path": "hospital-inpatient-notes.docx",
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/7b102250-68d1-475b-80f1-77cb8f3f3055/download/inpatient-county-frequency-notes.docx",
+          "title": "Hospital Inpatient - Notes"
+        }
+      ],
+      "title": "Hospital Inpatient - Notes"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The patient’s discharge disposition refers to where a patient is being discharged or transferred.",
+      "format": "CSV",
+      "hash": "ebc5787b199fc4384a0e5754b6598cde",
+      "name": "hospital-inpatient-characteristics-disposition-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-disposition-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "disp1",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/9e6bdf9f-a029-4713-9626-793b20d40ecb/download/disposition_pdd.csv",
+          "title": "Hospital Inpatient Characteristics - Disposition by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics - Disposition by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The expected payer is the entity or organization which is expected to pay or did pay the greatest share of the patient’s bill.",
+      "format": "CSV",
+      "hash": "305eb6921a9a0fc022f6b3c1a2682f3e",
+      "name": "hospital-inpatient-characteristics-expected-payer-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-expected-payer-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "pay_cat1",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/6365cd77-61c5-4cda-a6cb-4f052fcf3949/download/expectedpayerpdd.csv",
+          "title": "Hospital Inpatient Characteristics - Expected Payer by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics - Expected Payer by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The patient’s sex is reported as male, female, other, or unknown",
+      "format": "CSV",
+      "hash": "def76bb7685252bc2c2e71c76e90ae1c",
+      "name": "hospital-inpatient-characteristics-sex-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-sex-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationCode",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationDesc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/a9eaf75d-f45f-48f1-80d6-493eef9e7968/download/sexpddmasked.csv",
+          "title": "Hospital Inpatient Characteristics - Sex by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics - Sex by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The MS-DRG (Medicare Severity-Diagnosis Related Group) is a system used to classify a hospital inpatient stay into one of over 750 groups; each discharge record in the same MS-DRG is expected to have a similar hospital resource use. MS-DRGs are assigned based upon the principal diagnosis, additional diagnoses, procedures, sex and discharge status.",
+      "format": "CSV",
+      "hash": "7ced1ec8e8d13efa13d7d98fe1fd7035",
+      "name": "hospital-inpatient-characteristics-ms-drg-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-ms-drg-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "msdrg",
+            "type": "string"
+          },
+          {
+            "name": "msdrgcode",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationCode",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationDesc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/3c3c7db4-dd23-4f98-ad00-779b843b2d45/download/msdrgpddmasked.csv",
+          "title": "Hospital Inpatient Characteristics – MS-DRG by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics – MS-DRG by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The Major Diagnostic Categories (MDC) are formed by dividing all possible principal diagnoses into 25 mutually exclusive diagnosis areas. The diagnoses in each MDC correspond to a single organ system or etiology and in general are associated with a particular medical specialty.\r\n",
+      "format": "CSV",
+      "hash": "4e2fc278889c1953881ccccebcace442",
+      "name": "hospital-inpatient-characteristics-mdc-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-mdc-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "mdc",
+            "type": "string"
+          },
+          {
+            "name": "mdc_desc",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationCode",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationDesc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/57eaaf0f-6ba9-428a-9498-07070c1e55cc/download/mdcpddmasked.csv",
+          "title": "Hospital Inpatient Characteristics - MDC by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics - MDC by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The Race Group is assigned based upon a combination of the Ethnicity and Race reported to HCAI.",
+      "format": "CSV",
+      "hash": "ab7b221255eb841b00ae0aede78ce2cb",
+      "name": "hospital-inpatient-characteristics-race-group-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-race-group-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "race_grp1",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationCode",
+            "type": "string"
+          },
+          {
+            "name": "AnnotationDesc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/83a8cd12-434a-4a8d-9721-ca75899568bd/download/racegrouppddmasked.csv",
+          "title": "Hospital Inpatient Characteristics – Race Group by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics – Race Group by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The Admission Source is the site from which the patient originated.",
+      "format": "CSV",
+      "hash": "510e7175999730962e61423aa29e2815",
+      "name": "hospital-inpatient-characteristics-admission-source-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-admission-source-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "number"
+          },
+          {
+            "name": "srcsite1",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "number"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/5ce727f6-7a94-470b-8f27-d340f47d64b0/download/sourceofadmissionpdd.csv",
+          "title": "Hospital Inpatient Characteristics – Admission Source by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics – Admission Source by Patient County of Residence"
+    },
+    {
+      "description": "This data table contains annual hospital inpatient summary data based upon the Patient’s County of Residence. The type of care refers to the licensure of the bed occupied by an inpatient (acute care, skilled nursing/intermediate care, psychiatric care, chemical dependency recovery care, and physical rehabilitation care).",
+      "format": "CSV",
+      "hash": "c5cffafe8d7239c73b63d399af76219f",
+      "name": "hospital-inpatient-characteristics-type-of-care-by-patient-county-of-residence",
+      "path": "hospital-inpatient-characteristics-type-of-care-by-patient-county-of-residence.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "patcnty1",
+            "type": "string"
+          },
+          {
+            "name": "dsch_yr",
+            "type": "string"
+          },
+          {
+            "name": "typcare1",
+            "type": "string"
+          },
+          {
+            "name": "Discharges",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/44f54d54-e12c-4c06-b32e-924ecf4410d5/resource/58bed582-14ae-4521-b43f-e7682edb0819/download/typeofcarepdd.csv",
+          "title": "Hospital Inpatient Characteristics – Type of Care by Patient County of Residence"
+        }
+      ],
+      "title": "Hospital Inpatient Characteristics – Type of Care by Patient County of Residence"
+    }
+  ],
+  "secondary_sources": "",
+  "sources": [
+    {
+      "name": "Department of Health Care Access and Information, Healthcare Analytics Branch"
+    }
+  ],
+  "temporal_coverage": "2012-most recent available",
+  "title": "Hospital Inpatient - Characteristics by Patient County of Residence"
+}
