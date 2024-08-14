@@ -112,19 +112,18 @@ if submit_predict:
 
     # Local Model Prediction
     prediction = model.predict([input_features])[0]
-    st.write("Local Prediction Result:")
-    st.write(prediction)
+    st.write("Your estimated stay in the hospital is: {prediction}")
 
-    # External API Prediction
-    api_endpoint = model # Replace with your actual API endpoint
-    try:
-        response = requests.post(api_endpoint, json=data)
-        response.raise_for_status()  # Raise an error for bad responses
-        api_prediction = response.json()
-        st.write("API Prediction Result:")
-        st.json(api_prediction)
-    except requests.exceptions.RequestException as e:
-        st.error(f"API request failed: {e}")
+    # # External API Prediction
+    # api_endpoint = model # Replace with your actual API endpoint
+    # try:
+    #     response = requests.post(api_endpoint, json=data)
+    #     response.raise_for_status()  # Raise an error for bad responses
+    #     api_prediction = response.json()
+    #     st.write("API Prediction Result:")
+    #     st.json(api_prediction)
+    # except requests.exceptions.RequestException as e:
+    #     st.error(f"API request failed: {e}")
 
 # # Handling the explain button click
 # if submit_explain:
