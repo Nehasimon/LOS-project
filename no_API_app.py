@@ -105,7 +105,9 @@ if submit_predict:
     input_features += [0] * (48 - len(input_features))
 
     # Use the model for prediction with the preprocessed features
-    prediction = model.predict([input_features])[0]
+    pred = model.predict([input_features])[0]
+    prediction = round(pred)
+    st.write(f"Your estimated stay in the hospital is: {prediction} Days.")
     
-    st.write("Prediction Result:")
-    st.write(prediction)
+    # st.write("Prediction Result:")
+    # st.write(prediction)
