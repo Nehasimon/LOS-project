@@ -5,7 +5,8 @@ import requests
 import joblib
 
 # Load your model
-model = joblib.load(r'C:\Users\nehas\OneDrive\Desktop\Projects\LOS-project\model.joblib')
+model = joblib.load(r'C:\Users\nehas\OneDrive\Desktop\Projects\LOS-project\x.joblib')
+
 # Group 1: Health-related features
 health_features = [
     "blood", "circulatory", "congenital", "digestive", "endocrine", "genitourinary", 
