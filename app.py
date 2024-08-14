@@ -68,6 +68,16 @@ with st.container():
     selected_religion = st.selectbox("Select Religion", religion_options)
     selected_ethnicity = st.selectbox("Select Ethnicity", ethnicity_options)
 
+# Input for Age
+age_years = st.text_input("Age", value="0")
+try:
+    age_years = int(age_years)
+except ValueError:
+    st.error("Please enter a valid number for Age.")
+    age_years = 0
+age_days = age_years * 365
+
+
 # Create columns for health-related features
 col1, col2 = st.columns(2)
 
@@ -81,14 +91,6 @@ with col2:
     # Create checkboxes for the second half of health-related features
     health_values_part2 = {feature: st.checkbox(f"{feature}", value=False) for feature in health_features[len(health_features)//2:]}
 
-# Input for Age
-age_years = st.text_input("Age", value="0")
-try:
-    age_years = int(age_years)
-except ValueError:
-    st.error("Please enter a valid number for Age.")
-    age_years = 0
-age_days = age_years * 365
 
 # Submit button
 submit_predict = st.button("Predict")
