@@ -7,9 +7,6 @@ import joblib
 model = joblib.load('x.joblib')
 
 
-# Load your model from GitHub
-model = joblib.load('model.joblib')
-
 # Define feature lists and mappings
 health_features = [
     "blood", "circulatory", "congenital", "digestive", "endocrine", "genitourinary", 
