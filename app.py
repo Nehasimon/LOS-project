@@ -110,9 +110,10 @@ if submit_predict:
         ]
     }
 
-    # Local Model Prediction
+    # Model Prediction
     prediction = model.predict([input_features])[0]
-    st.write("Your estimated stay in the hospital is: {prediction}")
+    prediction = round(prediction)
+    st.write(f"Your estimated stay in the hospital is: {prediction}")
 
     # # External API Prediction
     # api_endpoint = model # Replace with your actual API endpoint
