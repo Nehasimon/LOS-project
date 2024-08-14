@@ -4,7 +4,7 @@ from datetime import datetime
 import joblib
 
 # Load your model
-model = joblib.load('LOS-project/model.joblib')
+model = joblib.load('model.joblib')
 
 
 # Group 1: Health-related features
