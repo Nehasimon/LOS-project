@@ -79,11 +79,10 @@ age_days = age_years * 365
 
 
 # Create columns for health-related features
+st.header("Medical Event")
 col1, col2 = st.columns(2)
 
-st.header("Medical Event")
 with col1:
-    st.header("Medical Event")
     # Create checkboxes for the first half of health-related features
     health_values_part1 = {feature: st.checkbox(f"{feature}", value=False) for feature in health_features[:len(health_features)//2]}
 
