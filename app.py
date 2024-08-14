@@ -6,14 +6,17 @@ import joblib
 # Load your model
 model = joblib.load('x.joblib')
 
-# Group 1: Health-related features
+
+# Load your model from GitHub
+model = joblib.load('model.joblib')
+
+# Define feature lists and mappings
 health_features = [
     "blood", "circulatory", "congenital", "digestive", "endocrine", "genitourinary", 
     "infectious", "injury", "mental", "misc", "muscular", "neoplasms", "nervous", 
     "prenatal", "respiratory", "skin"
 ]
 
-# Other categorical options
 admission_type_options = [
     "AMBULATORY OBSERVATION", "DIRECT EMER.", "DIRECT OBSERVATION", 
     "EU observation", "Elective", "Emergency", "Observation admit", 
@@ -52,33 +55,47 @@ st.markdown(
 
 st.title("Hospital Length of Stay Prediction")
 
-# Heading for medical events
-st.header("Medical Event")
+# Create a container for dropdowns at the top
+with st.container():
+    st.header("Patient Information")
+    # Dropdowns for Admission Type, Marital Status, Gender, Insurance, Religion, Ethnicity
+    selected_admission_type = st.selectbox("Select Admission Type", admission_type_options)
+    selected_marital_status = st.selectbox("Select Marital Status", marital_status_options)
+    selected_gender_text = st.selectbox("Select Gender", list(gender_options.keys()))
+    selected_gender = gender_options[selected_gender_text]
 
-# Create checkboxes for health-related features
-health_values = {feature: st.checkbox(f"{feature}", value=False) for feature in health_features}
+    selected_insurance = st.selectbox("Select Insurance Type", insurance_options)
+    selected_religion = st.selectbox("Select Religion", religion_options)
+    selected_ethnicity = st.selectbox("Select Ethnicity", ethnicity_options)
+
+# Create columns for health-related features
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header("Medical Event (Part 1)")
+    # Create checkboxes for the first half of health-related features
+    health_values_part1 = {feature: st.checkbox(f"{feature}", value=False) for feature in health_features[:len(health_features)//2]}
+
+with col2:
+    st.header("Medical Event (Part 2)")
+    # Create checkboxes for the second half of health-related features
+    health_values_part2 = {feature: st.checkbox(f"{feature}", value=False) for feature in health_features[len(health_features)//2:]}
 
 # Input for Age
 age_years = st.text_input("Age", value="0")
-age_years = int(age_years)
+try:
+    age_years = int(age_years)
+except ValueError:
+    st.error("Please enter a valid number for Age.")
+    age_years = 0
 age_days = age_years * 365
 
-# Dropdowns for Admission Type, Marital Status, Gender, Insurance, Religion, Ethnicity
-selected_admission_type = st.selectbox("Select Admission Type", admission_type_options)
-selected_marital_status = st.selectbox("Select Marital Status", marital_status_options)
-selected_gender_text = st.selectbox("Select Gender", list(gender_options.keys()))
-selected_gender = gender_options[selected_gender_text]
-
-selected_insurance = st.selectbox("Select Insurance Type", insurance_options)
-selected_religion = st.selectbox("Select Religion", religion_options)
-selected_ethnicity = st.selectbox("Select Ethnicity", ethnicity_options)
-
-# Submit buttons
+# Submit button
 submit_predict = st.button("Predict")
 
-# Handling the predict button click
 if submit_predict:
-    # Convert checkbox values to binary (0 or 1)
+    # Combine checkbox values from both columns
+    health_values = {**health_values_part1, **health_values_part2}
     health_values_binary = [int(health_values[feature]) for feature in health_features]
     
     # Map categorical inputs to numerical values
@@ -100,10 +117,11 @@ if submit_predict:
                                              insurance_encoded, admission_type_encoded, 
                                              marital_status_encoded, selected_gender]
 
-    # Pad the input features list with zeros if fewer than 48 features are provided
+    # zeros if fewer than 48 features are provided
     input_features += [0] * (48 - len(input_features))
 
-    # Prepare data for API request
+
+
     data = {
         "instances": [
             input_features  # All features combined
@@ -113,7 +131,7 @@ if submit_predict:
     # Model Prediction
     prediction = model.predict([input_features])[0]
     prediction = round(prediction)
-    st.write(f"Your estimated stay in the hospital is: {prediction}")
+    st.write(f"Your estimated stay in the hospital is: {prediction} Days.")
 
     # # External API Prediction
     # api_endpoint = model # Replace with your actual API endpoint
