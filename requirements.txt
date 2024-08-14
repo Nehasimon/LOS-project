@@ -3,4 +3,4 @@ datetime
 pandas
 requests
 joblib
-scikit-learn==1.5.1
+scikit-learn==1.4.1.post1
