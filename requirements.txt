@@ -1,0 +1,6 @@
+streamlit
+datetime
+pandas
+requests
+joblib
+scikit-learn<1.5.1

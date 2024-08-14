@@ -108,5 +108,3 @@ if submit_predict:
     
     st.write("Prediction Result:")
     st.write(prediction)
-
-
