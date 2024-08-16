@@ -50,7 +50,7 @@ st.title("Hospital Length of Stay Prediction")
 
 # S3 bucket and model key
 bucket_name = 'med-aifactory'
-model_key = 'model.joblib'
+model_key = 'tabular/model/model.joblib'
 
 # Load the model from S3
 model = load_model_from_s3(bucket_name, model_key)
