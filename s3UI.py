@@ -48,7 +48,7 @@ st.markdown(
     }
     </style>
     """,
-    allow_html=True
+    unsafe_allow_html=True
 )
 
 st.image('https://via.placeholder.com/800x200?text=Hospital+Length+of+Stay+Prediction', use_column_width=True)
