@@ -49,8 +49,8 @@ st.image('https://via.placeholder.com/800x200?text=Hospital+Length+of+Stay+Predi
 st.title("Hospital Length of Stay Prediction")
 
 # S3 bucket and model key
-bucket_name = 'mod-los-test'
-model_key = 'x.joblib'
+bucket_name = 'med-aifactory'
+model_key = 'model.joblib'
 
 # Load the model from S3
 model = load_model_from_s3(bucket_name, model_key)
