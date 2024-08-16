@@ -4,21 +4,21 @@ import joblib
 import os 
 
 # AWS S3 client setup
-# s3 = boto3.client(
-#     's3',
-#     aws_access_key_id=
-#     aws_secret_access_key= 
-#     region_name='us-east-1'
-# )
+s3 = boto3.client(
+    's3',
+    aws_access_key_id= "AKIAX2NXUVDJM3YW6FGM"
+    aws_secret_access_key= "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"
+    region_name='us-east-1'
+)
 
-# # Function to load the model from S3
-# def load_model_from_s3(bucket_name, model_key):
-#     local_model_path = '/tmp/model.joblib'
-#     os.makedirs(os.path.dirname(local_model_path), exist_ok=True)
-#     s3.download_file(bucket_name, model_key, local_model_path)
-#     with open(local_model_path, 'rb') as model_file:
-#         model = joblib.load(model_file)
-#     return model
+ # Function to load the model from S3
+def load_model_from_s3(bucket_name, model_key):
+     local_model_path = '/tmp/model.joblib'
+     os.makedirs(os.path.dirname(local_model_path), exist_ok=True)
+     s3.download_file(bucket_name, model_key, local_model_path)
+     with open(local_model_path, 'rb') as model_file:
+         model = joblib.load(model_file)
+     return model
 
 # Streamlit app setup
 st.set_page_config(page_title="Hospital Length of Stay Prediction", page_icon=":hospital:", layout="wide")
