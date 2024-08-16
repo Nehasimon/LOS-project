@@ -51,7 +51,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.image('https://via.placeholder.com/800x200?text=Hospital+Length+of+Stay+Prediction', use_column_width=True)
 
 st.title("Hospital Length of Stay Prediction")
 
