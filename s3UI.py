@@ -169,4 +169,5 @@ submit_predict = st.button("Predict")
 if submit_predict:
     # Make a prediction using the model
     prediction = model.predict([input_features])[0]
-    st.write(f"Your estimated stay in the hospital is: {prediction} Days.")
+    pred = round(prediction)
+    st.write(f"Your estimated stay in the hospital is: {pred} Days.")
