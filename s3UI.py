@@ -27,7 +27,7 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background-color: #e0f7fa; /* Lighter blue background */
+        background-color: #fff; /* Lighter blue background */
     }
     .sidebar .sidebar-content {
         background-color: #e0f7fa;
