@@ -1,4 +1,5 @@
 streamlit
+boto
 datetime
 pandas
 requests
