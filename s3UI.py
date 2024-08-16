@@ -160,7 +160,7 @@ input_features = health_values_binary + [age_days, ethnicity_encoded_value, reli
                                          insurance_encoded, admission_type_encoded, 
                                          marital_status_encoded, selected_gender]
 
-input_features += [0] * (53 - len(input_features))  # Ensure the feature vector has 48 elements
+input_features += [0] * (48 - len(input_features))  # Ensure the feature vector has 48 elements
 #input_features = numpy.array(input_features).reshape(1, -1)
 
 # Submit button
