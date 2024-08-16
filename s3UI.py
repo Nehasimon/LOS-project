@@ -37,7 +37,7 @@ st.markdown(
         color: white;
     }
     .stSelectbox div, .stTextInput div, .stCheckbox div {
-        color: #007bb5; /* Set text color to blue */
+        color: #fff; /* Set text color to blue */
     }
     .stSelectbox label, .stTextInput label, .stCheckbox label {
         color: white; /* Set label color to white */
