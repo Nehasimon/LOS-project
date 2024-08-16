@@ -27,7 +27,7 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background-color: #fff; /* Lighter blue background */
+        background-color: #fff;
     }
     .sidebar .sidebar-content {
         background-color: #e0f7fa;
@@ -39,9 +39,16 @@ st.markdown(
     .stSelectbox div, .stTextInput div, .stCheckbox div {
         color: #007bb5; /* Set text color to blue */
     }
+    .stSelectbox label, .stTextInput label, .stCheckbox label {
+        color: white; /* Set label color to white */
+    }
+    .stSelectbox option {
+        background-color: #007bb5;
+        color: white; /* Set dropdown options color to white */
+    }
     </style>
     """,
-    unsafe_allow_html=True
+    allow_html=True
 )
 
 st.image('https://via.placeholder.com/800x200?text=Hospital+Length+of+Stay+Prediction', use_column_width=True)
