@@ -1,5 +1,5 @@
 streamlit
-boto
+boto3
 datetime
 pandas
 requests
