@@ -6,8 +6,8 @@ import os
 # AWS S3 client setup
 s3 = boto3.client(
     's3',
-    aws_access_key_id= "AKIAX2NXUVDJM3YW6FGM",
-    aws_secret_access_key= "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",
+    aws_access_key_id= "AKIAX2NXUVDJF5OL3AH4",
+    aws_secret_access_key= "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",
     region_name='us-east-1'
 )
 
